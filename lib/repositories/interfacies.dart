@@ -1,5 +1,6 @@
 part of 'currency_repository.dart';
 
 abstract interface class CurrencyRepository {
-  Future<dynamic> test();
+  Future<List<CurrencyModel>> fetchListOfCurencies();
+  Future<Rates> fetchListOfRates();
 }
