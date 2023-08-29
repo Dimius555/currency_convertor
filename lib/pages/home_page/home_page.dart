@@ -18,8 +18,8 @@ class _HomePageState extends State<HomePage> {
   late TextEditingController _fromController;
   late TextEditingController _toController;
 
-  String _fromCurrency = 'Pick the currency';
-  String _toCurrency = 'Pick the currency';
+  String _fromCurrency = 'Currency From';
+  String _toCurrency = 'Currency To';
 
   @override
   void initState() {
