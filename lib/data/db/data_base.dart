@@ -23,6 +23,28 @@ class DataStore {
 
   final String _currencies = '_currencies_';
   final String _rates = '_rates_';
+  final String _lastDTUpdate = '_dt_';
+
+  Future<void> saveDTUpdate(DateTime dt) async {
+    try {
+      await store.record(_lastDTUpdate).put(db, dt.millisecondsSinceEpoch);
+      log('🔐 Saved DT of update to DB');
+    } catch (e) {
+      log('🔥 Failed to save DT of update: $e');
+      rethrow;
+    }
+  }
+
+  Future<DateTime> fetchDTUpdate() async {
+    try {
+      final int millisecondsSinceEpoch = await store.record(_lastDTUpdate).get(db) as int;
+      final dt = DateTime.fromMillisecondsSinceEpoch(millisecondsSinceEpoch);
+      return dt;
+    } catch (e) {
+      log('🔥 Couldn\'t get DT from DB: $e');
+      throw CustomException(reason: "Data is null", text: "The data doesn't exist", statusCode: -1);
+    }
+  }
 
   Future<void> saveCurrencies(List<CurrencyModel> list) async {
     final List<Map<String, dynamic>> res = [];

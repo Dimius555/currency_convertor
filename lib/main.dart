@@ -27,7 +27,9 @@ class MainApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (_) => ConvertorCubit(currencyRepository: sl()),
+          create: (_) => ConvertorCubit(currencyRepository: sl())
+            ..fetchRates()
+            ..fetchCurrencies(),
         ),
       ],
       child: const MaterialApp(
