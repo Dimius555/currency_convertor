@@ -44,9 +44,9 @@ class _HomePageState extends State<HomePage> {
           if (state.status is SuccessfulStatus) {
             final status = state.status as SuccessfulStatus;
             if (status.isOperationFrom) {
-              _toController.text = status.operationResultTo == 0 ? '' : status.operationResultTo.toString();
+              _toController.text = status.operationResultTo == 0 ? '' : status.operationResultTo.toStringAsFixed(2);
             } else {
-              _fromController.text = status.operationResultTo == 0 ? '' : status.operationResultTo.toString();
+              _fromController.text = status.operationResultTo == 0 ? '' : status.operationResultTo.toStringAsFixed(2);
             }
           } else if (state.status is ErrorStatus) {
             final status = state.status as ErrorStatus;
