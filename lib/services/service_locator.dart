@@ -15,5 +15,5 @@ void initServiceLocator() {
   sl.registerLazySingleton<API>(() => API.instance);
 
   // Repositories
-  sl.registerLazySingleton<CurrencyRepository>(() => CurrencyRepositoryImpl(api: sl()));
+  sl.registerLazySingleton<CurrencyRepository>(() => CurrencyRepositoryImpl(api: sl(), dataStore: sl()));
 }

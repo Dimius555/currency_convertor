@@ -16,6 +16,6 @@ class ConvertorCubit extends Cubit<ConvertorState> {
   final CurrencyRepository _currencyRepo;
 
   test() {
-    _currencyRepo.test();
+    _currencyRepo.fetchListOfCurencies();
   }
 }
