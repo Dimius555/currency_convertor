@@ -7,6 +7,10 @@ class Rates {
 
   Rates({required this.base, required this.dt, required this.rates});
 
+  static Rates empty() {
+    return Rates(base: '', dt: DateTime.now(), rates: []);
+  }
+
   static Rates fromAPI(Map<String, dynamic> json) {
     List<Rate> rates = [];
     json['rates'].keys.forEach((key) {
