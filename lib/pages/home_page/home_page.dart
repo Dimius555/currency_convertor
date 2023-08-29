@@ -1,5 +1,4 @@
 import 'package:currency_convertor/cubits/convertor/convertor_cubit.dart';
-import 'package:currency_convertor/repositories/currency_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
